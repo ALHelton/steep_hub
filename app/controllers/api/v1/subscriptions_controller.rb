@@ -5,6 +5,7 @@ class Api::V1::SubscriptionsController < ApplicationController
 
   def create
     sub = Subscription.new(sub_params)
+    
     if sub.save
       render json: SubscriptionSerializer.new(sub), status: 201
     else

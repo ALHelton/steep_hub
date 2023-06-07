@@ -48,7 +48,7 @@ describe "Subscriptions", type: :request do
       @params = ({
         title: "Andra's Subscription #4", 
         price: 100.00, 
-        frequency: 2,
+        frequency: "yearly",
       })
     end
 
@@ -81,6 +81,22 @@ describe "Subscriptions", type: :request do
     context "when unsuccessful" do
       describe "it returns a 401 error" do
         describe "if params are invalid" do
+          it "has non-existing customer_id" do
+            post api_v1_customer_subscriptions_path(123412341234), headers: @headers, params: JSON.generate(@params)
+            parsed = JSON.parse(response.body, symbolize_names: true)
+            
+            expect(response.status).to eq(401)
+            expect(parsed[:error]).to eq("Invalid Credentials")
+          end
+
+          it "has invalid customer_id" do
+            post api_v1_customer_subscriptions_path("hello"), headers: @headers, params: JSON.generate(@params)
+            parsed = JSON.parse(response.body, symbolize_names: true)
+            
+            expect(response.status).to eq(401)
+            expect(parsed[:error]).to eq("Invalid Credentials")
+          end
+
           it "has nil frequency" do
             @params[:frequency] = nil
             post api_v1_customer_subscriptions_path(@andra), headers: @headers, params: JSON.generate(@params)
@@ -92,6 +108,15 @@ describe "Subscriptions", type: :request do
 
           it "has nil price" do
             @params[:price] = nil
+            post api_v1_customer_subscriptions_path(@andra), headers: @headers, params: JSON.generate(@params)
+            parsed = JSON.parse(response.body, symbolize_names: true)
+            
+            expect(response.status).to eq(401)
+            expect(parsed[:error]).to eq("Invalid Credentials")
+          end
+
+          it "has invalid price" do
+            @params[:price] = "hello"
             post api_v1_customer_subscriptions_path(@andra), headers: @headers, params: JSON.generate(@params)
             parsed = JSON.parse(response.body, symbolize_names: true)
             
