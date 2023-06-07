@@ -49,13 +49,15 @@ describe "Subscriptions", type: :request do
         title: "Andra's Subscription #4", 
         price: 100.00, 
         frequency: 2,
-        })
-
-      post api_v1_customer_subscriptions_path(@andra), headers: @headers, params: JSON.generate(@params)
-      @parsed = JSON.parse(response.body, symbolize_names: true)
+      })
     end
 
     context "when successful" do
+      before do
+        post api_v1_customer_subscriptions_path(@andra), headers: @headers, params: JSON.generate(@params)
+        @parsed = JSON.parse(response.body, symbolize_names: true)
+      end
+
       it "gets creates a new subscription for a specific customer" do
         expect(response.status).to eq(201)
         expect(@parsed).to have_key(:data)
@@ -73,6 +75,30 @@ describe "Subscriptions", type: :request do
         expect(@parsed[:data][:attributes][:status]).to eq("active")
         expect(@parsed[:data][:attributes][:frequency]).to be_a(String)
         expect(@parsed[:data][:attributes][:frequency]).to eq("yearly")
+      end
+    end
+
+    context "when unsuccessful" do
+      describe "it returns a 401 error" do
+        describe "if params are invalid" do
+          it "has nil frequency" do
+            @params[:frequency] = nil
+            post api_v1_customer_subscriptions_path(@andra), headers: @headers, params: JSON.generate(@params)
+            parsed = JSON.parse(response.body, symbolize_names: true)
+            
+            expect(response.status).to eq(401)
+            expect(parsed[:error]).to eq("Invalid Credentials")
+          end
+
+          it "has nil price" do
+            @params[:price] = nil
+            post api_v1_customer_subscriptions_path(@andra), headers: @headers, params: JSON.generate(@params)
+            parsed = JSON.parse(response.body, symbolize_names: true)
+            
+            expect(response.status).to eq(401)
+            expect(parsed[:error]).to eq("Invalid Credentials")
+          end
+        end
       end
     end
   end
