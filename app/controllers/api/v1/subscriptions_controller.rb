@@ -4,9 +4,11 @@ class Api::V1::SubscriptionsController < ApplicationController
   end
 
   def create
-    sub = Subscription.create(sub_params)
+    sub = Subscription.new(sub_params)
     if sub.save
       render json: SubscriptionSerializer.new(sub), status: 201
+    else
+      render json: { error: "Invalid Credentials" }, status: 401
     end
   end
 end
