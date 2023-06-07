@@ -3,6 +3,10 @@ class Subscription < ApplicationRecord
   has_many :subscription_teas
   has_many :teas, through: :subscription_teas
 
+  validates :customer_id, presence: true
+  validates :price, presence: true, numericality: { only_float: true }
+  validates :frequency, presence: true
+
   enum status: [:active, :cancelled]
   enum frequency: [:weekly, :monthly, :yearly]
 end
