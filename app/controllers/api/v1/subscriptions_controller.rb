@@ -3,6 +3,11 @@ class Api::V1::SubscriptionsController < Api::ApiController
     render json: SubscriptionSerializer.new(Customer.find(params[:customer_id]).subscriptions)
   end
 
+  def show
+    subscription = Subscription.find(params[:id])
+    render json: SubscriptionSerializer.new(subscription)
+  end
+
   def create
     correct_price = SubscriptionPrices.price_for_frequency(params[:frequency])
     params = sub_params.merge!(price: correct_price)
