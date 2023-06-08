@@ -49,6 +49,31 @@ describe "Subscriptions", type: :request do
     end
   end
 
+  describe "GET one customer subscription" do
+    before do
+      get api_v1_customer_subscription_path(@andra, @andrasub), headers: @headers
+      @parsed = JSON.parse(response.body, symbolize_names: true)
+    end
+
+    context "when successful" do
+      it "gets subscriptions for a specific customer" do
+        expect(response).to be_successful
+        expect(@parsed).to be_a(Hash)
+        expect(@parsed).to have_key(:data)
+        expect(@parsed[:data]).to be_a(Hash)
+        expect(@parsed[:data].keys).to eq([:id, :type, :attributes])
+        expect(@parsed[:data][:id]).to be_a(String)
+        expect(@parsed[:data][:type]).to eq("subscription")
+        expect(@parsed[:data][:attributes]).to be_a(Hash)
+        expect(@parsed[:data][:attributes].keys).to eq([:title, :price, :status, :frequency])
+        expect(@parsed[:data][:attributes][:title]).to be_a(String)
+        expect(@parsed[:data][:attributes][:price]).to be_a(Float)
+        expect(@parsed[:data][:attributes][:status]).to be_a(String)
+        expect(@parsed[:data][:attributes][:frequency]).to be_a(String)
+      end
+    end
+  end
+
   describe "POST customer subscription" do
     before do
       @params = ({
