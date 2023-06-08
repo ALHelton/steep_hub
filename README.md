@@ -5,17 +5,9 @@
 SteepHub is an API only application for users to create and manage their tea subscriptions. Users can make, or update a subscription by selecting a frequency of weekly, monthly, or yearly. Upon creation or change of info, a corresponding price will be saved for that subscription based on the frequency selected. 
 <br>
 
-## Learning Goals
-- Expose an API that aggregates data from multiple external APIs
-- Expose an API that requires an authentication token
-- Expose an API for CRUD functionality
-- Determine completion criteria based on the needs of other developers
-- Test both API consumption and exposure, making use of the VCR mocking tool
-<br>
-
 ## Versions
 - Ruby 3.1.1
-- Rails 7.0.4
+- Rails 7.0.5
 <br>
 
 ## Setup
