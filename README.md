@@ -1,5 +1,47 @@
 # SteepHub
 
+## Summary
+<br>
+SteepHub is an API only application for users to create and manage their tea subscriptions. Users can make, or update a subscription by selecting a frequency of weekly, monthly, or yearly. Upon creation or change of info, a corresponding price will be saved for that subscription based on the frequency selected. 
+<br>
+
+## Versions
+- Ruby 3.1.1
+- Rails 7.0.5
+<br>
+
+## Setup
+
+1. Fork and Clone the repository
+```shell
+git clone git@github.com:ALHelton/steephub.git
+```
+
+2. Navigate to the directory
+```shell
+cd steep_hub
+```
+
+3. Install Gem Packages
+```shell
+bundle install
+```
+
+4. Update Gem Packages
+```shell
+bundle update
+```
+
+5. Run the Migrations
+```shell
+rails db:{drop,create,migrate,seed}
+```
+<br>
+
+## Schema
+![Schema](images/steephubschema.png)
+<br>
+
 
 ## Endpoints
 
