@@ -116,8 +116,7 @@ Accept: application/json
 
 ```json
 {
-  "title": "Tasty Tea Sub",
-  "frequency": "monthly"
+  "title": "Tasty Tea Sub"
 }
 ```
 
