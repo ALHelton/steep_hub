@@ -53,8 +53,8 @@ body:
 
 <details>
 <summary> POST /api/v1/customers/1/subscriptions </summary>
-
-- Upon sending a frequency in the request, the corresponding price will be generated in the response
+<br>
+Upon sending a frequency in the request, the corresponding price will be generated in the response
 
 ## Request:
 
@@ -103,6 +103,7 @@ body:
     "error": "Invalid Credentials"
 }
 ```
+<br>
 
 #### Nil Frequency:
 
@@ -160,6 +161,7 @@ body:
 
 <details>
 <summary> PATCH /api/v1/customers/1/subscriptions/1 </summary>
+<br>
 
 ## Cancelled Status: 
 ### Request:
@@ -196,8 +198,8 @@ body:
 ```
 
 ## Update Subscription Frequency: 
-
-- Upon sending an updated frequency in the request, the new corresponding price will be generated in the response
+<br>
+Upon sending an updated frequency in the request, the new corresponding price will be generated in the response
 
 ### Request:
 
