@@ -39,7 +39,8 @@ rails db:{drop,create,migrate,seed}
 <br>
 
 ## Schema
-![Schema](images/steephubschema.png)
+<img width="1206" alt="SteepHub Schema" src="https://github.com/ALHelton/steep_hub/assets/116662742/962150ab-265d-4983-9c5f-16fd1f032f6c">
+
 <br>
 
 
