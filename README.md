@@ -2,7 +2,6 @@
 <br>
 
 ## Summary
-<br>
 SteepHub is an API only application for users to create and manage their tea subscriptions. Users can make, or update a subscription by selecting a frequency of weekly, monthly, or yearly. Upon creation or change of info, a corresponding price will be saved for that subscription based on the frequency selected. 
 <br>
 <br>
