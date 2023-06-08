@@ -17,7 +17,7 @@ SteepHub is an API only application for users to create and manage their tea sub
 
 1. Fork and Clone the repository
 ```shell
-git clone git@github.com:ALHelton/steephub.git
+git clone git@github.com:ALHelton/steep_hub.git
 ```
 
 2. Navigate to the directory
