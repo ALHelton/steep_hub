@@ -9,12 +9,10 @@
 
 ## Response:
 
-<pre>
-<code>
-
 status: 200
 body:
 
+```json
 {
     "data": [
         {
@@ -49,8 +47,7 @@ body:
         }
     ]
 }
-</pre>
-</code>
+```
 </details>
 
 
@@ -61,26 +58,22 @@ body:
 
 ## Request:
 
-<pre>
-<code>
 Content-Type: application/json
 Accept: application/json
 
+```json
 {
   "title": "Tasty Tea Sub",
   "frequency": "monthly"
 }
-</pre>
-</code>
+```
 
 ## Response:
-
-<pre>
-<code>
 
 status: 201
 body:
 
+```json
 {
     "data": {
         "id": "8",
@@ -93,10 +86,7 @@ body:
         }
     }
 }
-
-</pre>
-</code>
-
+```
 ## Errors:
 
 ### 401 Unauthorized
@@ -105,19 +95,14 @@ body:
 
 POST /api/v1/customers/12309845710928347/subscriptions
 
-<pre>
-<code>
-
 status: 401
 body:
 
+```json
 {
     "error": "Invalid Credentials"
 }
-
-</pre>
-</code>
-</details>
+```
 
 #### Nil Frequency:
 
@@ -125,32 +110,26 @@ POST /api/v1/customers/1/subscriptions
 
 ##### Request:
 
-<pre>
-<code>
 Content-Type: application/json
 Accept: application/json
 
+```json
 {
   "title": "Tasty Tea Sub",
   "frequency": "monthly"
 }
-</pre>
-</code>
+```
 
 ##### Response:
-
-<pre>
-<code>
 
 status: 401
 body:
 
+```json
 {
     "error": "Invalid Credentials"
 }
-
-</pre>
-</code>
+```
 </details>
 
 
@@ -159,12 +138,10 @@ body:
 
 ## Response:
 
-<pre>
-<code>
-
 status: 200
 body:
 
+```json
 {
     "data": {
         "id": "1",
@@ -177,9 +154,7 @@ body:
         }
     }
 }
-
-</pre>
-</code>
+```
 </details>
 
 
@@ -189,29 +164,23 @@ body:
 ## Cancelled Status: 
 ### Request:
 
-<pre>
-<code>
-
 Content-Type: application/json
 Accept: application/json
 
 body:
 
+```json
 {
   "status": "cancelled"
 }
-
-</pre>
-</code>
+```
 
 ### Response:
-
-<pre>
-<code>
 
 status: 200
 body:
 
+```json
 {
     "data": {
         "id": "1",
@@ -224,9 +193,7 @@ body:
         }
     }
 }
-</pre>
-</code>
-</details>
+```
 
 ## Update Subscription Frequency: 
 
@@ -234,29 +201,23 @@ body:
 
 ### Request:
 
-<pre>
-<code>
-
 Content-Type: application/json
 Accept: application/json
 
 body:
 
+```json
 {
   "frequency": "weekly"
 }
-
-</pre>
-</code>
+```
 
 ### Response:
-
-<pre>
-<code>
 
 status: 200
 body:
 
+```json
 {
     "data": {
         "id": "1",
@@ -269,37 +230,29 @@ body:
         }
     }
 }
-</pre>
-</code>
-</details>
+```
 
 ## Update Subscription Title: 
 
 ### Request:
-
-<pre>
-<code>
 
 Content-Type: application/json
 Accept: application/json
 
 body:
 
+```json
 {
   "title": "Way Cooler Title"
 }
-
-</pre>
-</code>
+```
 
 ### Response:
-
-<pre>
-<code>
 
 status: 200
 body:
 
+```json
 {
     "data": {
         "id": "1",
@@ -312,7 +265,5 @@ body:
         }
     }
 }
-</pre>
-</code>
-</details>
+```
 </details>
