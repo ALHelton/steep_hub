@@ -48,8 +48,10 @@ body:
     ]
 }
 ```
+<br>
+<br>
+<br>
 </details>
-
 
 <details>
 <summary> POST /api/v1/customers/1/subscriptions </summary>
@@ -130,8 +132,10 @@ body:
     "error": "Invalid Credentials"
 }
 ```
+<br>
+<br>
+<br>
 </details>
-
 
 <details>
 <summary> GET /api/v1/customers/1/subscriptions/1 </summary>
@@ -155,8 +159,10 @@ body:
     }
 }
 ```
+<br>
+<br>
+<br>
 </details>
-
 
 <details>
 <summary> PATCH /api/v1/customers/1/subscriptions/1 </summary>
